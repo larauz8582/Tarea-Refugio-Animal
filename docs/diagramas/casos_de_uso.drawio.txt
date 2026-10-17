@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="casos-uso" name="Página-1">
+    <mxGraphModel dx="1200" dy="800">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="actor1" value="Ciudadano / Reportante" style="ellipse;whiteSpace=wrap;html=1;personName=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor2" value="Voluntario / Veterinario" style="ellipse;whiteSpace=wrap;html=1;personName=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor3" value="Administrador del Refugio" style="ellipse;whiteSpace=wrap;html=1;personName=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="sistema" value="Sistema de Rescate y Adopción" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="260" y="60" width="420" height="480" as="geometry"/>
+        </mxCell>
+        <mxCell id="cu1" value="Reportar caso de rescate" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#232323;" vertex="1" parent="sistema">
+          <mxGeometry x="60" y="40" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cu2" value="Consultar estado de caso" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#232323;" vertex="1" parent="sistema">
+          <mxGeometry x="60" y="110" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cu3" value="Asignar responsable" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#232323;" vertex="1" parent="sistema">
+          <mxGeometry x="60" y="180" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cu4" value="Actualizar estado del caso" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#232323;" vertex="1" parent="sistema">
+          <mxGeometry x="60" y="250" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cu5" value="Enviar notificación automática" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#232323;" vertex="1" parent="sistema">
+          <mxGeometry x="60" y="320" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cu6" value="Aprobar adopción" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#232323;" vertex="1" parent="sistema">
+          <mxGeometry x="60" y="390" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1" value="" style="endArrow=block;html=1;strokeWidth=1;" edge="1" parent="1" source="actor1" target="cu1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" value="" style="endArrow=block;html=1;strokeWidth=1;" edge="1" parent="1" source="actor1" target="cu2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" value="" style="endArrow=block;html=1;strokeWidth=1;" edge="1" parent="1" source="actor2" target="cu4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4" value="" style="endArrow=block;html=1;strokeWidth=1;" edge="1" parent="1" source="actor2" target="cu5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l5" value="" style="endArrow=block;html=1;strokeWidth=1;" edge="1" parent="1" source="actor3" target="cu3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l6" value="" style="endArrow=block;html=1;strokeWidth=1;" edge="1" parent="1" source="actor3" target="cu6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,10 @@
+class VistaConsola:
+    def mostrar_menu(self):
+        print("\n===== SISTEMA DE RESCATE ANIMAL =====")
+        print("1. Registrar caso")
+        print("2. Ver casos")
+        print("3. Salir")
+        return input("Opción: ")
+
+    def pedir_dato(self, etiqueta):
+        return input(f"{etiqueta}: ")

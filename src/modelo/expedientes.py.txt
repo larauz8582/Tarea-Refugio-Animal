@@ -1,0 +1,38 @@
+from abc import ABC, abstractmethod
+
+class ExpedienteBase(ABC):
+    def __init__(self, fecha, ubicacion):
+        self.fecha_rescate = fecha
+        self.ubicacion = ubicacion
+
+    @abstractmethod
+    def obtener_datos_especificos(self):
+        pass
+
+class ExpedientePerro(ExpedienteBase):
+    def __init__(self, fecha, ubicacion, raza, tamaño):
+        super().__init__(fecha, ubicacion)
+        self.raza = raza
+        self.tamaño = tamaño
+    def obtener_datos_especificos(self):
+        return f"Perro — Raza: {self.raza}, Tamaño: {self.tamaño}"
+
+class ExpedienteGato(ExpedienteBase):
+    def __init__(self, fecha, ubicacion, pelaje, independencia):
+        super().__init__(fecha, ubicacion)
+        self.pelaje = pelaje
+        self.independencia = independencia
+    def obtener_datos_especificos(self):
+        return f"Gato — Pelaje: {self.pelaje}, Independencia: {self.independencia}"
+
+class FabricaExpedientes:
+    @staticmethod
+    def crear_expediente(tipo, fecha, ubicacion, **kwargs):
+        tipos = {
+            "perro": ExpedientePerro,
+            "gato": ExpedienteGato
+        }
+        clase = tipos.get(tipo.lower())
+        if not clase:
+            raise ValueError(f"Tipo no válido: {tipo}")
+        return clase(fecha, ubicacion, **kwargs)

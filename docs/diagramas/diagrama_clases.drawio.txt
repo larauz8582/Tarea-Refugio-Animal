@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="clases-uml" name="Página-1">
+    <mxGraphModel dx="1400" dy="900">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="cls1" value="GestorSistema&lt;&lt;Singleton&gt;&gt;&#xA;---&#xA;- _instancia: GestorSistema&#xA;- _casos: List[CasoRescate]&#xA;- _usuarios: List[Usuario]&#xA;---&#xA;+ obtener_instancia(): GestorSistema&#xA;+ registrar_caso(caso): bool" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneLine=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="240" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls2" value="CasoRescate&#xA;---&#xA;- id: str&#xA;- descripcion: str&#xA;- estado: str&#xA;- _suscriptores: List[Observador]&#xA;---&#xA;+ cambiar_estado(nuevo_estado): void&#xA;+ suscribir(obs): void" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneLine=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="240" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls3" value="Observador&lt;&lt;Interfaz&gt;&gt;&#xA;---&#xA;---&#xA;+ actualizar(origen, mensaje): void" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneLine=0;" vertex="1" parent="1">
+          <mxGeometry x="660" y="40" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls6" value="ExpedienteBase&lt;&lt;Abstracta&gt;&gt;&#xA;---&#xA;- fecha_rescate: Date&#xA;- ubicacion: str&#xA;---&#xA;+ obtener_datos_especificos(): Dict" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneLine=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="240" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls7" value="ExpedientePerro&#xA;---&#xA;- raza: str&#xA;- tamaño: str&#xA;---&#xA;+ obtener_datos_especificos(): Dict" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneLine=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="440" width="180" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls8" value="ExpedienteGato&#xA;---&#xA;- pelaje: str&#xA;- independencia: int&#xA;---&#xA;+ obtener_datos_especificos(): Dict" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneLine=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="440" width="180" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="cls10" value="FabricaExpedientes&lt;&lt;Factory&gt;&gt;&#xA;---&#xA;---&#xA;+ crear_expediente(tipo: str, datos: Dict): ExpedienteBase" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;swimlaneLine=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="300" width="240" height="100" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

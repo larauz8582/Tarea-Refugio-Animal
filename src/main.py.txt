@@ -1,0 +1,19 @@
+from src.vista.consola_vista import VistaConsola
+from src.controlador.controlador_casos import ControladorCasos
+
+def main():
+    vista = VistaConsola()
+    controlador = ControladorCasos(vista)
+    while True:
+        op = vista.mostrar_menu()
+        if op == "1":
+            controlador.registrar_caso()
+        elif op == "2":
+            for c in controlador.gestor.listar_casos():
+                print(f" {c.id} | {c.estado} | {c.expediente.obtener_datos_especificos()}")
+        elif op == "3":
+            print("Saliendo...")
+            break
+
+if __name__ == "__main__":
+    main()

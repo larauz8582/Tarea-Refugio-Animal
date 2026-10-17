@@ -1,0 +1,19 @@
+from abc import ABC, abstractmethod
+
+class Observador(ABC):
+    @abstractmethod
+    def actualizar(self, mensaje):
+        pass
+
+class Voluntario(Observador):
+    def __init__(self, nombre, correo):
+        self.nombre = nombre
+        self.correo = correo
+    def actualizar(self, mensaje):
+        print(f" [{self.nombre}] Notificación: {mensaje}")
+
+class Administrador(Observador):
+    def __init__(self, nombre):
+        self.nombre = nombre
+    def actualizar(self, mensaje):
+        print(f" Admin {self.nombre}: {mensaje}")

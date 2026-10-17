@@ -1,0 +1,15 @@
+class CasoRescate:
+    def __init__(self, id_caso, descripcion, expediente):
+        self.id = id_caso
+        self.descripcion = descripcion
+        self.expediente = expediente
+        self.estado = "Reportado"
+        self._suscriptores = []
+
+    def suscribir(self, observador):
+        self._suscriptores.append(observador)
+
+    def cambiar_estado(self, nuevo_estado):
+        self.estado = nuevo_estado
+        for obs in self._suscriptores:
+            obs.actualizar(f"Caso {self.id}: {nuevo_estado}")

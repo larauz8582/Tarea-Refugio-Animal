@@ -1,0 +1,27 @@
+from src.modelo.gestor_sistema import GestorSistema
+from src.modelo.expedientes import FabricaExpedientes
+from src.modelo.caso_rescate import CasoRescate
+from src.modelo.observadores import Voluntario, Administrador
+
+class ControladorCasos:
+    def __init__(self, vista):
+        self.gestor = GestorSistema()
+        self.vista = vista
+
+    def registrar_caso(self):
+        id_caso = self.vista.pedir_dato("ID Caso")
+        desc = self.vista.pedir_dato("Descripción/Ubicación")
+        tipo = self.vista.pedir_dato("Tipo (perro/gato)")
+        fecha = self.vista.pedir_dato("Fecha")
+
+        exp = FabricaExpedientes.crear_expediente(
+            tipo, fecha, desc,
+            raza="Mestiza", tamaño="Mediano",
+            pelaje="Corto", independencia=5
+        )
+
+        caso = CasoRescate(id_caso, desc, exp)
+        caso.suscribir(Voluntario("María", "maria@refugio.ec"))
+        caso.suscribir(Administrador("Carlos"))
+        self.gestor.registrar_caso(caso)
+        caso.cambiar_estado("En proceso")
