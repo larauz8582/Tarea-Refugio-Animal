@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reportar nuevo rescate animal">
+    <title>Reportar Rescate | Refugio Animal</title>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>Refugio Animal — UTM</h1>
+        <p>Registro de Nuevo Rescate</p>
+    </header>
+
+    <!-- Navegación común -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="reportar.html">Reportar Rescate</a></li>
+            <li><a href="rescates.html">Casos Registrados</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <section>
+            <h2>Registrar Nuevo Caso de Rescate</h2>
+            <p>Completa la información del hallazgo. Los campos marcados con * son obligatorios.</p>
+
+            <form action="#" method="post">
+                <!-- Nombre provisional -->
+                <div>
+                    <label for="nombre">Nombre provisional del animal *:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <!-- Categoría / Especie -->
+                <div>
+                    <label for="categoria">Categoría / Especie *:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                        <option value="fauna">Fauna Silvestre</option>
+                    </select>
+                </div>
+
+                <!-- Nivel de urgencia -->
+                <fieldset>
+                    <legend>Nivel de urgencia médica *:</legend>
+                    <label>
+                        <input type="radio" name="urgencia" value="alta" required>
+                        Alta — Atención inmediata
+                    </label><br>
+                    <label>
+                        <input type="radio" name="urgencia" value="media">
+                        Media — Atención en las próximas horas
+                    </label><br>
+                    <label>
+                        <input type="radio" name="urgencia" value="baja">
+                        Baja — Seguimiento programado
+                    </label>
+                </fieldset>
+
+                <!-- Ubicación -->
+                <div>
+                    <label for="ubicacion">Ubicación del hallazgo *:</label>
+                    <input type="text" id="ubicacion" name="ubicacion" required>
+                </div>
+
+                <!-- Fecha y hora -->
+                <div>
+                    <label for="fecha">Fecha de rescate *:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <!-- Descripción detallada -->
+                <div>
+                    <label for="descripcion">Descripción detallada del estado *:</label>
+                    <textarea id="descripcion" name="descripcion" rows="5" required placeholder="Describe el estado físico, comportamiento, entorno y cualquier dato relevante..."></textarea>
+                </div>
+
+                <!-- Datos del reportante -->
+                <div>
+                    <label for="reportante">Tu nombre (Reportante):</label>
+                    <input type="text" id="reportante" name="reportante">
+                </div>
+                <div>
+                    <label for="contacto">Teléfono o correo de contacto:</label>
+                    <input type="text" id="contacto" name="contacto">
+                </div>
+
+                <!-- Botones -->
+                <div>
+                    <button type="submit">Enviar Reporte</button>
+                    <button type="reset">Limpiar Formulario</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Refugio Animal — UTM | Todos los derechos reservados</p>
+        <p>Contacto: refugio@utm.edu.ec | Teléfono: (593)  99 877 5543</p>
+    </footer>
+</body>
+</html>
